@@ -1,40 +1,64 @@
-import Navbar from './components/NavBar'
-import SectionCarousel from "./components/SectionCarousel";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/NavBar';
+import Home from './pages/home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import BeforeAfter from './pages/BeforeAfter';
 
-const imagesArray = [
-  "./images/home/1.jpg",
-  "/images/home/2.jpg",
-  "/images/home/3.jpg",
-  "/images/home/4.jpg",
-  "/images/home/5.jpg",
-  "/images/home/6.jpg",
-  "/images/home/7.jpg",
-  "/images/home/8.jpg",
-  "/images/home/9.jpg",
-  "/images/home/10.jpg",
-  "/images/home/11.jpg",
-  "/images/home/12.jpg",
-  "/images/home/13.jpg",
-  "/images/home/14.jpg",
-  "/images/home/15.jpg",
-  "/images/home/16.jpg",
-  "/images/home/17.jpg",
-  "/images/home/18.jpg",
-]
+// Páginas de Projects
+import SculptedSerenity from './pages/projects/SculptedSerenity';
+import MarbleRadiance from './pages/projects/MarbleRadiance';
+import MonochromeMasterpiece from './pages/projects/MonochromeMasterpiece';
+import NordicLuminosity from './pages/projects/NordicLuminosity';
+import SkylineRetreat from './pages/projects/SkylineRetreat';
+import CelestialMarble from './pages/projects/CelestialMarble';
+import LuminousHarmony from './pages/projects/LuminousHarmony';
+import ElysianBath from './pages/projects/ElysianBath';
+import MidnightVeins from './pages/projects/MidnightVeins';
+import MarbleIllusions from './pages/projects/MarbleIllusions';
+import EssentialElegance from './pages/projects/EssentialElegance';
+
+// Páginas de Features
+import Glass from './pages/features/Glass';
+import LEDs from './pages/features/LEDs';
+import StandingShowers from './pages/features/StandingShowers';
+import Tubs from './pages/features/Tubs';
+import Vanity from './pages/features/Vanity';
+import XLBathrooms from './pages/features/XLBathrooms';
 
 function App() {
-
   return (
-    <>
+    <Router>
       <Navbar />
-      <SectionCarousel
-        title="We transform everyday spaces into experiences of wellbeing."
-        text="We create unique bathrooms that blend functionality, elegance, and comfort. Every detail is carefully designed to reflect your style and enhance the enjoyment of your space.
-Explore our projects and find inspiration for your dream bathroom.."
-        images={imagesArray}
-      />
-    </>
-  )
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/before-after" element={<BeforeAfter />} />
+        
+        {/* Rutas de Projects */}
+        <Route path="/projects/sculpted-serenity" element={<SculptedSerenity />} />
+        <Route path="/projects/marble-radiance" element={<MarbleRadiance />} />
+        <Route path="/projects/monochrome-masterpiece" element={<MonochromeMasterpiece />} />
+        <Route path="/projects/nordic-luminosity" element={<NordicLuminosity />} />
+        <Route path="/projects/skyline-retreat" element={<SkylineRetreat />} />
+        <Route path="/projects/celestial-marble" element={<CelestialMarble />} />
+        <Route path="/projects/luminous-harmony" element={<LuminousHarmony />} />
+        <Route path="/projects/elysian-bath" element={<ElysianBath />} />
+        <Route path="/projects/midnight-veins" element={<MidnightVeins />} />
+        <Route path="/projects/marble-illusions" element={<MarbleIllusions />} />
+        <Route path="/projects/essential-elegance" element={<EssentialElegance />} />
+        
+        {/* Rutas de Features */}
+        <Route path="/features/glass" element={<Glass />} />
+        <Route path="/features/leds" element={<LEDs />} />
+        <Route path="/features/standing-showers" element={<StandingShowers />} />
+        <Route path="/features/tubs" element={<Tubs />} />
+        <Route path="/features/vanity" element={<Vanity />} />
+        <Route path="/features/xl-bathrooms" element={<XLBathrooms />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
