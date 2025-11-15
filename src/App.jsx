@@ -16,7 +16,6 @@ import LuminousHarmony from './pages/projects/LuminousHarmony';
 import ElysianBath from './pages/projects/ElysianBath';
 import MidnightVeins from './pages/projects/MidnightVeins';
 import MarbleIllusions from './pages/projects/MarbleIllusions';
-import EssentialElegance from './pages/projects/EssentialElegance';
 
 // Páginas de Features
 import Glass from './pages/features/Glass';
@@ -47,7 +46,6 @@ function App() {
         <Route path="/projects/elysian-bath" element={<ElysianBath />} />
         <Route path="/projects/midnight-veins" element={<MidnightVeins />} />
         <Route path="/projects/marble-illusions" element={<MarbleIllusions />} />
-        <Route path="/projects/essential-elegance" element={<EssentialElegance />} />
         
         {/* Rutas de Features */}
         <Route path="/features/glass" element={<Glass />} />

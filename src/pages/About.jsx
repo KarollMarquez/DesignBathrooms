@@ -1,7 +1,7 @@
 import SectionCarousel from "../components/SectionCarousel";
 
 const imagesArray = [
-    "./images/about/1.jpg",
+    "/images/about/1.jpg",
     "/images/about/2.jpg",
     "/images/about/3.jpg",
     "/images/about/4.jpg",
@@ -26,7 +26,7 @@ function About() {
     return (
         <>
             <SectionCarousel
-                title="Learn more about our company."
+                title="Learn more about our company"
                 text={<>
                     At Designo Bathrooms, we focus exclusively on crafting high-quality, custom bathrooms that reflect your personal style. With more than 15 years of experience, we bring expert design, detailed renderings, and skilled craftsmanship to every project—whether you prefer a clean modern look or a timeless classic feel.
                     <br />

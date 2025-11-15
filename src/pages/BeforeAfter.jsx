@@ -1,7 +1,7 @@
 import SectionCarousel from "../components/SectionCarousel";
 
 const imagesArray = [
-  "./images/before-after/1.png",
+  "/images/before-after/1.png",
   "/images/before-after/2.png",
   "/images/before-after/3.png",
   "/images/before-after/4.png",

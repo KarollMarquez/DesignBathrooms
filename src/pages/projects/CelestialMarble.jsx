@@ -1,8 +1,21 @@
-export default function CelestialMarble() {
+import SectionCarousel from "../../components/SectionCarousel";
+
+const imagesArray = [
+    "/images/projects/cm1.jpg",
+    "/images/projects/cm2.jpg"
+]
+
+function CelestialMarble() {
+
     return (
-        <main className="p-8">
-            <h1 className="text-3xl font-bold">Celestial Marble</h1>
-            <p className="mt-4 text-muted">Project placeholder page.</p>
-        </main>
+        <>
+            <SectionCarousel
+                title="Celestial Marble"
+                text="Light, balance, perfection. This refined sanctuary uses soft ambient lighting to highlight the purity and natural beauty of its marble surfaces. Modern fixtures and polished textures work together in subtle harmony, creating a bathroom defined by contemporary elegance and serene sophistication."                
+                images={imagesArray}
+            />
+        </>
     )
 }
+
+export default CelestialMarble

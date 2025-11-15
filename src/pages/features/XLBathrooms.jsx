@@ -1,8 +1,15 @@
+import Gallery from '../../components/Gallery';
+
+const images = [
+  "/images/features/xl/1.webp",
+  "/images/features/xl/2.webp",
+  "/images/features/xl/3.webp",
+  "/images/features/xl/4.webp",
+  
+];
+
 export default function XLBathrooms() {
-    return (
-        <main className="p-8">
-            <h1 className="text-3xl font-bold">XL Bathrooms</h1>
-            <p className="mt-4 text-muted">Feature placeholder page.</p>
-        </main>
+    return(
+        <Gallery images={images}/>
     )
-}
+};

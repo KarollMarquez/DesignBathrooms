@@ -1,8 +1,18 @@
+import Gallery from '../../components/Gallery';
+
+const images = [
+  "/images/features/leds/1.webp",
+  "/images/features/leds/2.webp",
+  "/images/features/leds/3.webp",
+  "/images/features/leds/5.webp",
+  "/images/features/leds/6.webp",
+  "/images/features/leds/4.webp",
+  "/images/features/leds/7.webp",
+  
+];
+
 export default function LEDs() {
-    return (
-        <main className="p-8">
-            <h1 className="text-3xl font-bold">LEDs</h1>
-            <p className="mt-4 text-muted">Feature placeholder page.</p>
-        </main>
+    return(
+        <Gallery images={images}/>
     )
-}
+};

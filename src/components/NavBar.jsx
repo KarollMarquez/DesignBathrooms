@@ -9,7 +9,7 @@ import Youtube from "../assets/icons/youtube.svg";
 import Tiktok from "../assets/icons/tiktok.svg";
 import Tumblr from "../assets/icons/tumblr.svg";
 import Pinterest from "../assets/icons/pinterest.svg";
-import { handleShare } from '../share.js';
+import { handleShare } from '../functions/share.js';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -29,8 +29,7 @@ export default function Navbar() {
         { name: "Luminous Harmony", path: "/projects/luminous-harmony" },
         { name: "Elysian Bath", path: "/projects/elysian-bath" },
         { name: "Midnight Veins", path: "/projects/midnight-veins" },
-        { name: "Marble Illusions", path: "/projects/marble-illusions" },
-        { name: "Essential Elegance", path: "/projects/essential-elegance" }
+        { name: "Marble Illusions", path: "/projects/marble-illusions" }
       ]
     },
     {

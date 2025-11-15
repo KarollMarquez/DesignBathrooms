@@ -1,8 +1,24 @@
-export default function MarbleRadiance() {
+import SectionCarousel from "../../components/SectionCarousel";
+
+const imagesArray = [
+    "/images/projects/mr1.webp",
+    "/images/projects/mr2.webp",
+    "/images/projects/mr3.webp",
+    "/images/projects/mr4.webp",
+    "/images/projects/mr5.webp",
+]
+
+function MarbleRadiance() {
+
     return (
-        <main className="p-8">
-            <h1 className="text-3xl font-bold">Marble Radiance</h1>
-            <p className="mt-4 text-muted">Project placeholder page.</p>
-        </main>
+        <>
+            <SectionCarousel
+                title="Marble Radiance"
+                text="Luxury and balance come together in this refined marble sanctuary. Polished stone, brushed gold fixtures, and soft wood accents create a warm yet elevated atmosphere. At the center, a luminous shower with dual rainheads and seamless glass offers a spa-like experience, completing a bathroom designed for timeless elegance and everyday indulgence."                
+                images={imagesArray}
+            />
+        </>
     )
 }
+
+export default MarbleRadiance
