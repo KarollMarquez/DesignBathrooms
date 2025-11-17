@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Menu, X, ArrowLeft, Phone, MapPin } from "lucide-react";
 import Maps from "../assets/icons/maps.svg";
 import Instagram from "../assets/icons/instagram.svg";
-import Facebook from "../assets/icons/facebook.svg";
 import Twitter from "../assets/icons/x.svg";
 import Youtube from "../assets/icons/youtube.svg";
 import Tiktok from "../assets/icons/tiktok.svg";
@@ -181,11 +180,29 @@ export default function Navbar() {
 
               {/* Redes sociales en mobile */}
               <div className="flex gap-4 pt-4">
-                <img src={Facebook} alt="facebook" className="w-6 h-6 hover:opacity-70 transition" />
-                <img src={Instagram} alt="instagram" className="w-6 h-6 hover:opacity-70 transition" />
-                <img src={Youtube} alt="youtube" className="w-6 h-6 hover:opacity-70 transition" />
-                <img src={Tiktok} alt="tiktok" className="w-6 h-6 hover:opacity-70 transition" />
-                <img src={Twitter} alt="x" className="w-6 h-6 hover:opacity-70 transition" />
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=1655%20Fort%20Myer%20Drive%2C%207th%20Floor%2C%20Arlington%2C%20VA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={Maps} alt="google maps" className="w-6 h-6 hover:opacity-70 transition" />
+                </a>
+
+                <a href="https://www.instagram.com/designobuilders/" target="_blank" rel="noopener noreferrer">
+                  <img src={Instagram} alt="instagram" className="w-6 h-6 hover:opacity-70 transition" />
+                </a>
+
+                <a href="https://www.youtube.com/@DesignoBuilders" target="_blank" rel="noopener noreferrer">
+                  <img src={Youtube} alt="youtube" className="w-6 h-6 hover:opacity-70 transition" />
+                </a>
+
+                <a href="https://www.tiktok.com/@designobuilders" target="_blank" rel="noopener noreferrer">
+                  <img src={Tiktok} alt="tiktok" className="w-6 h-6 hover:opacity-70 transition" />
+                </a>
+
+                <a href="https://x.com/DesignoBuilders" target="_blank" rel="noopener noreferrer">
+                  <img src={Twitter} alt="x" className="w-6 h-6 hover:opacity-70 transition" />
+                </a>              
               </div>
             </div>
           )}
