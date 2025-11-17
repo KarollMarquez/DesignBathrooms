@@ -182,7 +182,6 @@ export default function Navbar() {
 
               {/* Redes sociales en mobile */}
               <div className="flex gap-4 pt-4">
-                <MapPin size={24} className="hover:opacity-70 transition cursor-pointer" />
                 <img src={Facebook} alt="facebook" className="w-6 h-6 hover:opacity-70 transition" />
                 <img src={Instagram} alt="instagram" className="w-6 h-6 hover:opacity-70 transition" />
                 <img src={Youtube} alt="youtube" className="w-6 h-6 hover:opacity-70 transition" />
