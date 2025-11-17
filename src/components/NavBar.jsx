@@ -41,7 +41,6 @@ export default function Navbar() {
     },
     { name: "Before/After", path: "/before-after" },
     { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
   ];
 
   const handleBack = () => setActiveMenu(null);
