@@ -1,20 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ArrowLeft } from "lucide-react";
+import { Menu, X, ArrowLeft, Phone, MapPin } from "lucide-react";
 import Maps from "../assets/icons/maps.svg";
 import Instagram from "../assets/icons/instagram.svg";
 import Facebook from "../assets/icons/facebook.svg";
 import Twitter from "../assets/icons/x.svg";
 import Youtube from "../assets/icons/youtube.svg";
 import Tiktok from "../assets/icons/tiktok.svg";
-import Tumblr from "../assets/icons/tumblr.svg";
-import Pinterest from "../assets/icons/pinterest.svg";
-import { handleShare } from '../functions/share.js';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
-  const [shareOpen, setShareOpen] = useState(false);
 
   const links = [
     {
@@ -51,11 +47,38 @@ export default function Navbar() {
   const handleBack = () => setActiveMenu(null);
 
   return (
-    <nav className="fixed w-full top-0 z-50 text-white font-george bg-[#3c3c3c]">
-      <div className="flex items-center justify-between p-6 px-8 mx-auto">
-        <h1 className="text-3xl tracking-wide">
-          <Link to="/">Designo Bathrooms</Link>
-        </h1>
+    <nav className="fixed w-full top-0 z-50 text-white font-george bg-[#02283b]">
+      <div className="w-full bg-transparent pt-2">
+        <div className="mx-auto px-8 py-2 flex items-center justify-between text-sm text-white">
+          <a
+            href="tel:703-775-1113"
+            aria-label="Call 703-775-1113"
+            className="flex items-center gap-2 ml-4 underline underline-offset-2"
+            style={{ textDecorationColor: '#4ba5d3' }}
+          >
+            <Phone size={16} className="text-[#4ba5d3]" />
+            <span className="sm:inline">703-775-1113</span>
+          </a>
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=1655%20Fort%20Myer%20Drive%2C%207th%20Floor%2C%20Arlington%2C%20VA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:flex items-center gap-2 text-white underline underline-offset-2"
+            style={{ textDecorationColor: '#4ba5d3' }}
+          >
+            <MapPin size={16} className="text-[#4ba5d3]" />
+            <span className="text-sm">1655 Fort Myer Drive, 7th Floor, Arlington, VA</span>
+          </a>
+        </div>
+      </div>
+
+      <div className="flex items-center justify-between px-8 mx-auto">
+        <div className="flex items-center gap-4">
+          <Link to="/" className="flex items-center pl-4 md:pl-6">
+            <img src="/images/logo.jpg" alt="Designo logo" className="w-[70px] h-[70px] md:w-[100px] md:h-[100px] object-contain align-middle" />
+          </Link>
+        </div>
 
         {/* === DESKTOP MENU === */}
         <ul className="hidden md:flex gap-4 text-sm tracking-wide relative items-center">
@@ -67,12 +90,12 @@ export default function Navbar() {
                     {link.name}
                   </div>
                   {/* Submenú */}
-                  <ul className="absolute left-0 top-full hidden group-hover:flex flex-col bg-[#3c3c3c] z-40">
+                  <ul className="absolute left-0 top-full hidden group-hover:flex flex-col bg-[#02283b] z-40">
                     {link.sub.map((subItem) => (
                       <li key={subItem.name}>
                         <Link
                           to={subItem.path}
-                          className="block px-4 py-2 hover:bg-[#A4C179] hover:text-black transition-colors whitespace-nowrap"
+                          className="block px-4 py-2 hover:bg-[#609bb9] hover:text-black transition-colors whitespace-nowrap"
                         >
                           {subItem.name}
                         </Link>
@@ -83,7 +106,7 @@ export default function Navbar() {
               ) : (
                 <Link
                   to={link.path}
-                  className="block px-3 py-2 hover:bg-[#A4C179] hover:text-black transition-colors"
+                  className="block px-3 py-2 hover:bg-[#609bb9] hover:text-black transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -92,57 +115,30 @@ export default function Navbar() {
           ))}
 
           {/* Redes sociales */}
-          <li className="flex items-center gap-4 ml-4">
-            {[
-              { icon: Maps, url: "https://maps.google.com" },
-              { icon: Instagram, url: "https://www.instagram.com/designobuilders/" },
-              { icon: Youtube, url: "https://www.youtube.com/@DesignoBuilders" },
-              { icon: Tiktok, url: "https://www.tiktok.com/@designobuilders" },
-              { icon: Twitter, url: "https://x.com/DesignoBuilders" }
-            ].map(({ icon, url }, i) => (
-              <a
-                key={i}
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={icon}
-                  alt="social icon"
-                  className="w-5 h-5 hover:opacity-70 cursor-pointer transition"
-                />
-              </a>
-            ))}
+          <li className="hidden lg:flex items-center gap-4 ml-4">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=1655%20Fort%20Myer%20Drive%2C%207th%20Floor%2C%20Arlington%2C%20VA"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={Maps} alt="google maps" className="w-5 h-5 hover:opacity-70 cursor-pointer transition" />
+            </a>
 
-            {/* Share button */}
-            <div className="relative">
-              <button
-                onClick={() => setShareOpen(!shareOpen)}
-                className="flex items-center gap-1 hover:text-[#A4C179] transition"
-              >
-                <span>Share</span>
-              </button>
+            <a href="https://www.instagram.com/designobuilders/" target="_blank" rel="noopener noreferrer">
+              <img src={Instagram} alt="instagram" className="w-5 h-5 hover:opacity-70 cursor-pointer transition" />
+            </a>
 
-              {shareOpen && (
-                <ul className="absolute right-0 mt-2 bg-[#3c3c3c] shadow-md flex flex-col text-sm z-50 w-40">
-                  {[{ name: "Facebook", icon: Facebook },
-                  { name: "Instagram", icon: Instagram },
-                  { name: "Twitter", icon: Twitter },
-                  { name: "Tumblr", icon: Tumblr },
-                  { name: "Pinterest", icon: Pinterest }
-                  ].map(({ name, icon }) => (
-                    <li
-                      key={name}
-                      onClick={() => handleShare(name)}
-                      className="flex items-center gap-2 pl-3 py-2 hover:bg-[#A4C179] hover:text-black cursor-pointer"
-                    >
-                      <img src={icon} alt={name} className="w-4 h-4" />
-                      {name}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
+            <a href="https://www.youtube.com/@DesignoBuilders" target="_blank" rel="noopener noreferrer">
+              <img src={Youtube} alt="youtube" className="w-5 h-5 hover:opacity-70 cursor-pointer transition" />
+            </a>
+
+            <a href="https://www.tiktok.com/@designobuilders" target="_blank" rel="noopener noreferrer">
+              <img src={Tiktok} alt="tiktok" className="w-5 h-5 hover:opacity-70 cursor-pointer transition" />
+            </a>
+
+            <a href="https://x.com/DesignoBuilders" target="_blank" rel="noopener noreferrer">
+              <img src={Twitter} alt="x" className="w-5 h-5 hover:opacity-70 cursor-pointer transition" />
+            </a>
           </li>
         </ul>
 
@@ -160,7 +156,7 @@ export default function Navbar() {
 
       {/* === MOBILE MENU === */}
       {open && (
-        <div className="fixed inset-0 bg-[#3c3c3c]/95 flex flex-col items-center justify-center text-white text-xl transition-all duration-300">
+        <div className="fixed inset-0 bg-[#02283b]/95 flex flex-col items-center justify-center text-white text-xl transition-all duration-300">
           {!activeMenu && (
             <div className="flex flex-col items-center space-y-6">
               {links.map((link) => (
@@ -168,7 +164,7 @@ export default function Navbar() {
                   {link.sub ? (
                     <button
                       onClick={() => setActiveMenu(link.name)}
-                      className="w-full py-2 hover:bg-[#A4C179] hover:text-black transition-colors"
+                      className="w-full py-2 hover:bg-[#609bb9] hover:text-black transition-colors"
                     >
                       {link.name}
                     </button>
@@ -176,7 +172,7 @@ export default function Navbar() {
                     <Link
                       to={link.path}
                       onClick={() => setOpen(false)}
-                      className="block w-full py-2 hover:bg-[#A4C179] hover:text-black transition-colors"
+                      className="block w-full py-2 hover:bg-[#609bb9] hover:text-black transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -186,14 +182,12 @@ export default function Navbar() {
 
               {/* Redes sociales en mobile */}
               <div className="flex gap-4 pt-4">
-                {[Facebook, Instagram, Youtube, Tiktok, Twitter].map((icon, i) => (
-                  <img
-                    key={i}
-                    src={icon}
-                    alt="social"
-                    className="w-6 h-6 hover:opacity-70 transition"
-                  />
-                ))}
+                <MapPin size={24} className="hover:opacity-70 transition cursor-pointer" />
+                <img src={Facebook} alt="facebook" className="w-6 h-6 hover:opacity-70 transition" />
+                <img src={Instagram} alt="instagram" className="w-6 h-6 hover:opacity-70 transition" />
+                <img src={Youtube} alt="youtube" className="w-6 h-6 hover:opacity-70 transition" />
+                <img src={Tiktok} alt="tiktok" className="w-6 h-6 hover:opacity-70 transition" />
+                <img src={Twitter} alt="x" className="w-6 h-6 hover:opacity-70 transition" />
               </div>
             </div>
           )}
@@ -202,7 +196,7 @@ export default function Navbar() {
             <div className="flex flex-col items-center space-y-4 w-full">
               <button
                 onClick={handleBack}
-                className="flex items-center gap-2 text-base hover:text-[#A4C179]"
+                className="flex items-center gap-2 text-base hover:text-[#609bb9]"
               >
                 <ArrowLeft size={20} /> Back
               </button>
@@ -214,7 +208,7 @@ export default function Navbar() {
                     key={subItem.name}
                     to={subItem.path}
                     onClick={() => setOpen(false)}
-                    className="block w-full py-2 hover:bg-[#A4C179] hover:text-black transition-colors text-center"
+                    className="block w-full py-2 hover:bg-[#609bb9] hover:text-black transition-colors text-center"
                   >
                     {subItem.name}
                   </Link>

@@ -67,7 +67,7 @@ export default function SectionCarousel({ title, text, images = [] }) {
       >
 
         {/* sticky que contiene el carrusel */}
-        <div className="sticky top-0 w-full bg-[#3c3c3c] overflow-hidden">
+        <div className="sticky top-0 w-full bg-[#02283b] overflow-hidden">
 
           {/* CARRUSEL SCROLLEABLE NATIVO SIN BARRAS */}
           <div
@@ -96,9 +96,9 @@ export default function SectionCarousel({ title, text, images = [] }) {
             {images.map((src, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 h-screen px-4 max-[425px]:px-2"
+                className="flex justify-center flex-shrink-0 h-screen px-4 max-[425px]:px-2"
               >
-                <div className="w-full h-full flex items-center justify-center">
+                <div className="w-full flex items-center justify-center">
                   <img
                     src={src}
                     alt={`Project ${index + 1}`}
